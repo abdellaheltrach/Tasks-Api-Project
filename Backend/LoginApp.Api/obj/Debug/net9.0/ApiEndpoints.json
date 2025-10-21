@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LoginApp.Api.DTOs.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "Method": "Register",
+    "RelativePath": "api/login/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LoginApp.Api.DTOs.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
