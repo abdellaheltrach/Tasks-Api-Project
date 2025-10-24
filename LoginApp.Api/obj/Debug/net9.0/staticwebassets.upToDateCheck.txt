@@ -1,0 +1,6 @@
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\css\style.css
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\js\script.js
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\index.html
+wwwroot\css\style.css
+wwwroot\index.html
+wwwroot\js\script.js
