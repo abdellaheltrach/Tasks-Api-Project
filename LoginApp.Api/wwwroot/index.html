@@ -1,26 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Login Test</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Login</h1>
-      <input type="text" id="username" placeholder="Username" />
-      <input type="password" id="password" placeholder="Password" />
-      <button onclick="login()">Login</button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskFlow — Login</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="info">
+      <div class="brand">
+        <h1>Task<span>Flow</span></h1>
+        <p class="tag">Design your day. Ship your work.</p>
+      </div>
 
-      <h1>Register</h1>
-      <input type="text" id="regUsername" placeholder="Username" />
-      <input type="password" id="regPassword" placeholder="Password" />
-      <button onclick="register()">Register</button>
+      <div class="art">
+        <!-- decorative SVG or illustration -->
+        <svg width="260" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff7f0" stop-opacity="0.05"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0.06"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" rx="30" fill="url(#g)"/>
+          <g transform="translate(20,20)">
+            <circle cx="60" cy="40" r="28" fill="#ffeaa7" opacity="0.9"/>
+            <rect x="20" y="80" width="120" height="60" rx="10" fill="#a29bfe" opacity="0.95"/>
+            <circle cx="120" cy="30" r="18" fill="#74b9ff" opacity="0.95"/>
+          </g>
+        </svg>
+      </div>
 
-      <div id="result"></div>
+      <div class="info-footer">
+        <p>Built for focused teams — minimal, fast, and delightful.</p>
+        <small>© TaskFlow</small>
+      </div>
+    </aside>
+
+    <main class="auth-wrap">
+      <div class="card login-card" id="loginCard" role="region" aria-label="Login form">
+        <div class="card-head">
+          <h2>Welcome Back</h2>
+          <p class="muted">Sign in to continue to TaskFlow</p>
+        </div>
+
+        <div class="card-body">
+          <label class="field">
+            <span class="label">Username</span>
+            <input id="username" type="text" autocomplete="username" placeholder="e.g. alex97" />
+          </label>
+
+          <label class="field">
+            <span class="label">Password</span>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Your password" />
+          </label>
+
+          <div class="actions">
+            <button class="btn primary" id="loginBtn" onclick="login()">Sign in</button>
+            <button class="btn ghost" id="openSignupBtn" onclick="openSignup()">Create account</button>
+          </div>
+
+          <p id="result" class="result" aria-live="polite"></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Sign-up modal -->
+  <div id="signupOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close sign up">&times;</button>
+
+      <div class="modal-card">
+        <h3 id="signupTitle">Create your TaskFlow account</h3>
+        <p class="muted">Free to get started — password must be 6+ characters.</p>
+
+        <label class="field">
+          <span class="label">Username</span>
+          <input id="regUsername" type="text" autocomplete="username" placeholder="pick a username" />
+        </label>
+
+        <label class="field">
+          <span class="label">Password</span>
+          <input id="regPassword" type="password" autocomplete="new-password" placeholder="strong password" />
+        </label>
+
+        <label class="field">
+          <span class="label">Confirm password</span>
+          <input id="confirmPassword" type="password" autocomplete="new-password" placeholder="confirm password" />
+        </label>
+
+        <div class="actions">
+          <button class="btn primary" onclick="register()">Create account</button>
+        </div>
+
+        <p class="modal-note">
+          <a href="#" id="alreadyLink" onclick="closeSignup();return false;">I ALREADY HAVE AN ACCOUNT.</a>
+        </p>
+
+        <p id="signupResult" class="result" aria-live="polite"></p>
+      </div>
     </div>
+  </div>
 
-    <script src="/js/script.js"></script>
-  </body>
+  <script src="/js/script.js"></script>
+</body>
 </html>

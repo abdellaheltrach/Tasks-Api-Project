@@ -22,6 +22,83 @@ namespace LoginApp.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(3000)
+                        .HasColumnType("nvarchar(3000)");
+
+                    b.Property<DateTime?>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TaskStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaskStatusId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tasks", (string)null);
+                });
+
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaskStatus", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Pending"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "In Progress"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Completed"
+                        });
+                });
+
             modelBuilder.Entity("LoginApp.DataAccess.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -54,7 +131,7 @@ namespace LoginApp.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatingDate = new DateTime(2025, 10, 22, 23, 55, 0, 0, DateTimeKind.Unspecified),
-                            PasswordHash = "",
+                            PasswordHash = "$2a$11$0jjaKSFycpBuRCPCjpFifeb37evdVrYq98U0aT8T3d7pavQUh5xx6",
                             Role = "Admin",
                             Username = "admin"
                         },
@@ -62,10 +139,39 @@ namespace LoginApp.DataAccess.Migrations
                         {
                             Id = 2,
                             CreatingDate = new DateTime(2025, 10, 22, 23, 55, 0, 0, DateTimeKind.Unspecified),
-                            PasswordHash = "",
+                            PasswordHash = "$2a$11$bn3QqVz07vRjHP.qleORVec0EP0TgDbW583IXIy1axeFiIy/rtkuC",
                             Role = "Guest",
                             Username = "guest"
                         });
+                });
+
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskItem", b =>
+                {
+                    b.HasOne("LoginApp.DataAccess.Entities.TaskStatus", "Status")
+                        .WithMany("Tasks")
+                        .HasForeignKey("TaskStatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LoginApp.DataAccess.Entities.User", "User")
+                        .WithMany("Tasks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Status");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskStatus", b =>
+                {
+                    b.Navigation("Tasks");
+                });
+
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.User", b =>
+                {
+                    b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618
         }

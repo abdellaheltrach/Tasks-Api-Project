@@ -1,5 +1,6 @@
 ﻿using LoginApp.DataAccess.Data;
 using LoginApp.DataAccess.Entities;
+using LoginApp.DataAccess.Repositories.Interfaces;
 
 
 namespace LoginApp.DataAccess.Repositories

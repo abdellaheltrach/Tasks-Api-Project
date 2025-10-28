@@ -22,7 +22,7 @@ namespace LoginApp.DataAccess.Data.Config
 
 
             // Seed Admin User
-
+            
             builder.HasData(
                      new User { 
                          Id = 1,
@@ -41,5 +41,9 @@ namespace LoginApp.DataAccess.Data.Config
  );
            
         }
+
+
     }
+
+
 }

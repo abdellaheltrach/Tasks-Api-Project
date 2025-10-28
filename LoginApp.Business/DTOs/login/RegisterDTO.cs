@@ -1,6 +1,6 @@
-﻿namespace LoginApp.Api.DTOs
+﻿namespace LoginApp.Business.DTOs.login
 {
-    public class RegisterRequest
+    public class RegisterDTO
     {
         public string Username { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;

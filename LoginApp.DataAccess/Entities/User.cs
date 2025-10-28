@@ -17,5 +17,7 @@ namespace LoginApp.DataAccess.Entities
         public DateTime CreatingDate { get; set; } = DateTime.Now;
 
         public string Role { get; set; } = "Guest";
+
+        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     }
 }

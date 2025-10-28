@@ -1,25 +1,26 @@
-﻿using LoginApp.Api.DTOs;
-using LoginApp.Business;
+﻿using LoginApp.Business.DTOs.login;
+using LoginApp.Business.Services;
+using LoginApp.Business.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoginApp.Api.Controllers
 {
 
     [ApiController]
-    [Route("api/login")]
+    [Route("api/auth")]
     public class UserAuthenticationController : ControllerBase
     {
-        private readonly UserService _authService;
+        private readonly IUserService _authService;
 
-        public UserAuthenticationController(UserService AuthenticationService)
+        public UserAuthenticationController(IUserService AuthenticationService)
         {
             _authService = AuthenticationService;
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        public IActionResult Register([FromBody] RegisterDTO request)
         {
-            var success = _authService.Register(request.Username, request.Password);
+            var success = _authService.Register(request);
 
             if (!success) return BadRequest(new { message = "Username already exists" });
 
@@ -28,14 +29,19 @@ namespace LoginApp.Api.Controllers
 
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public IActionResult Login([FromBody] LoginDTO request)
         {
-            var success = _authService.Login(request.Username, request.Password, out string role);
+            var result = _authService.Login(request);
 
-            if (!success) return Unauthorized(new { message = "Invalid username or password" });
+            if (!result.Success)
+                return Unauthorized(new { message = "Invalid username or password" });
 
-            return Ok(new { message = "Login successful", role });
+            return Ok(new { message = "Login successful", token = result.Token, role = result.Role });
         }
+
+
+
+
     }
 }
 
