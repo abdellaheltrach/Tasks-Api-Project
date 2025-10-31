@@ -22,6 +22,44 @@ namespace LoginApp.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DeviceId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeviceName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiresDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsCanceled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("ExpiresDate", "IsCanceled");
+
+                    b.ToTable("RefreshTokens", (string)null);
+                });
+
             modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskItem", b =>
                 {
                     b.Property<int>("Id")
@@ -52,7 +90,7 @@ namespace LoginApp.DataAccess.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -145,6 +183,17 @@ namespace LoginApp.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LoginApp.DataAccess.Entities.RefreshToken", b =>
+                {
+                    b.HasOne("LoginApp.DataAccess.Entities.User", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("LoginApp.DataAccess.Entities.TaskItem", b =>
                 {
                     b.HasOne("LoginApp.DataAccess.Entities.TaskStatus", "Status")
@@ -156,8 +205,7 @@ namespace LoginApp.DataAccess.Migrations
                     b.HasOne("LoginApp.DataAccess.Entities.User", "User")
                         .WithMany("Tasks")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Status");
 
@@ -171,6 +219,8 @@ namespace LoginApp.DataAccess.Migrations
 
             modelBuilder.Entity("LoginApp.DataAccess.Entities.User", b =>
                 {
+                    b.Navigation("RefreshTokens");
+
                     b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618

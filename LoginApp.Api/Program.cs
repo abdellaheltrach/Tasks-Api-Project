@@ -1,3 +1,5 @@
+﻿using Azure.Core;
+using LoginApp.Api.Models;
 using LoginApp.Business.Services;
 using LoginApp.Business.Services.Interfaces;
 using LoginApp.DataAccess.Data;
@@ -5,8 +7,11 @@ using LoginApp.DataAccess.Entities;
 using LoginApp.DataAccess.Repositories;
 using LoginApp.DataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel;
+using System.Drawing;
 using System.Text;
 
 
@@ -20,16 +25,24 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Register repositories & services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserAuthService, UserAuthService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
+
+builder.Services.AddScoped<ITaskItemRepository, TaskRepository>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 builder.Services.AddScoped<ITaskItemRepository, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 
 
-builder.Services.AddScoped<ITaskItemRepository, TaskRepository>();
-builder.Services.AddScoped<ITaskService, TaskService>();
+
+// ✅ Add Background Service for cleanup (optional but recommended for performance)
+builder.Services.AddHostedService<RefreshTokenCleanupService>();
+
+
 // Enable controllers
 builder.Services.AddControllers();
 
@@ -40,6 +53,9 @@ builder.Services.AddCors(options =>
         b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
+
+// ✅ Add JWT settings from configuration (for injection in TokenService, etc.)
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 //  JWT Authentication Configuration
 
@@ -52,22 +68,31 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;    //what to do when an unauthorized user tries to access [Authorize] endpoints.
 })
 
-
    // how to verify incoming tokens
-.AddJwtBearer(options =>        
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,  //Check that the �issuer� (the app that created the token) matches your jwtSettings["Issuer"]
-        ValidateAudience = true,//Check that the token is meant for your app.
-        ValidateLifetime = true,//Check that the token is not expired.
-        ValidateIssuerSigningKey = true, //Check that the token�s signature is valid using your secret key.
-        ValidIssuer = jwtSettings["Issuer"], //check values from jwtSettings["Issuer"]
-        ValidAudience = jwtSettings["Audience"],// check values jwtSettings["Audience"]
-        IssuerSigningKey = new SymmetricSecurityKey(key) //check if token hasn't been forged or modified by JWT-Key
-    };
-});
+   .AddJwtBearer(options =>
+   {
+       options.TokenValidationParameters = new TokenValidationParameters
+       {
+           ValidateIssuer = true,  //Check that the “issuer” (the app that created the token) matches your jwtSettings["Issuer"]
+           ValidateAudience = true,//Check that the token is meant for your app.
+           ValidateLifetime = true,//Check that the token is not expired.
+           ValidateIssuerSigningKey = true, //Check that the token’s signature is valid using your secret key.
+           ValidIssuer = jwtSettings["Issuer"], //check values from jwtSettings["Issuer"]
+           ValidAudience = jwtSettings["Audience"],// check values jwtSettings["Audience"]
+           IssuerSigningKey = new SymmetricSecurityKey(key) //check if token hasn't been forged or modified by JWT-Key
+       };
+   });
 
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    //The cookie cannot be accessed via client - side JS(reduces XSS attacks).
+    options.Cookie.HttpOnly = true;           // Prevents JavaScript access to the cookie.
+    //The cookie is sent only in requests originating from the same site, not from external sites. Helps prevent CSRF.
+    options.Cookie.SameSite = SameSiteMode.Strict; // Only send cookie in same-site requests (helps prevent CSRF).
+    //ASP.NET will only send the cookie over HTTPS connections.
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Only send cookie over HTTPS.
+});
 
 var app = builder.Build();
 
@@ -87,4 +112,3 @@ app.MapControllers();
 
 
 app.Run();
-

@@ -10,8 +10,8 @@ namespace LoginApp.DataAccess.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        public void AddUser(User user);
-        public User? FindUserByUserName(string UserName);
-        public void SaveChanges();
+        public Task AddUserAsync(User user);
+        public Task<User?> FindUserByUserNameAsync(string UserName);
+        public Task SaveChangesAsync();
     }
 }

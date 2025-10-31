@@ -716,8 +716,10 @@ C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\ob
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\ref\LoginApp.Api.dll
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\wo51shyscy-g7boj4er54.gz
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\gpmnbtphm7-fq9pglipsl.gz
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\8pa0gm99xn-i7wh9ew9t4.gz
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\a39do48j6n-c86wzmd3ru.gz
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\LoginApp.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\mgg357n9hs-qvrrsugtck.gz
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\bin\Debug\net9.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\gpmnbtphm7-xu5fig14ye.gz
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net9.0\compressed\mgg357n9hs-eksgj5lhkh.gz

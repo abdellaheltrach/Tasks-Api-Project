@@ -7,7 +7,6 @@ const signupResultEl = () => document.getElementById("signupResult");
 const signupOverlay = () => document.getElementById("signupOverlay");
 
 // helper: parse JWT payload safely
-
 function parseJwt(token) {
   try {
     const payload = token.split(".")[1];
@@ -24,20 +23,17 @@ function parseJwt(token) {
 }
 
 // store token + optional meta
-function storeAuth(token, role = null) {
-  localStorage.setItem("token", token);
+function storeAuth(accessToken, role = null) {
+  localStorage.setItem("token", accessToken);
   if (role) localStorage.setItem("role", role);
 
-  const payload = parseJwt(token);
+  const payload = parseJwt(accessToken);
   if (payload) {
-    // try common claim keys
     const userId =
       payload.nameid ||
       payload.nameId ||
       payload.sub ||
-      payload[
-        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
-      ];
+      payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
     const username =
       payload.unique_name ||
       payload.name ||
@@ -102,11 +98,18 @@ async function login() {
   }
 
   r.textContent = "Signing in…";
+
+  // generate or reuse deviceId
+  const deviceId = localStorage.getItem("deviceId") || crypto.randomUUID();
+  const deviceName = navigator.userAgent || "Unknown Device";
+  localStorage.setItem("deviceId", deviceId);
+
   try {
     const res = await fetch(`${API_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password, deviceId, deviceName }),
+      credentials: "include", // include cookies for refresh token
     });
 
     if (!res.ok) {
@@ -117,16 +120,17 @@ async function login() {
     }
 
     const data = await res.json();
-    if (data && data.token) {
-      storeAuth(data.token, data.role);
+    if (data && data.accessToken) {
+      storeAuth(data.accessToken, data.role);
     }
 
     r.textContent = "Welcome back!";
     r.classList.add("ok");
 
-    // redirect to tasks page (replace history)
+    // redirect to tasks page
     window.location.replace("/tasks.html");
   } catch (err) {
+    console.error(err);
     r.textContent = "Network error — try again.";
     r.classList.add("error");
   }
@@ -174,10 +178,33 @@ async function register() {
     r.textContent = "Account created. You can sign in now.";
     r.classList.add("ok");
 
-    // Auto-close signup modal after short delay
+    // Auto-close signup modal
     setTimeout(closeSignup, 1500);
   } catch (err) {
+    console.error(err);
     r.textContent = "Network error — try again.";
     r.classList.add("error");
+  }
+}
+
+// REFRESH TOKEN HANDLER (optional)
+async function refreshToken() {
+  try {
+    const res = await fetch(`${API_URL}/refresh`, {
+      method: "POST",
+      credentials: "include", // send HttpOnly refresh cookie
+    });
+
+    if (!res.ok) throw new Error("Unable to refresh token");
+
+    const data = await res.json();
+    if (data && data.accessToken) {
+      storeAuth(data.accessToken, data.role);
+    }
+
+    return data.accessToken;
+  } catch (err) {
+    clearAuth();
+    window.location.replace("/login.html");
   }
 }

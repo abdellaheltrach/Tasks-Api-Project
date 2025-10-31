@@ -10,6 +10,7 @@ namespace LoginApp.DataAccess.Data
         public DbSet<User> Users { get; set; }
         public DbSet<TaskItem> Tasks { get; set; }
         public DbSet<TaskStatus> TasksStatus { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)

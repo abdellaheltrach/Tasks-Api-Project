@@ -44,6 +44,4 @@ namespace LoginApp.DataAccess.Data.Config
 
 
     }
-
-
 }

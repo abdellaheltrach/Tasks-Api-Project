@@ -19,5 +19,8 @@ namespace LoginApp.DataAccess.Entities
         public string Role { get; set; } = "Guest";
 
         public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
+        public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
+
     }
+
 }

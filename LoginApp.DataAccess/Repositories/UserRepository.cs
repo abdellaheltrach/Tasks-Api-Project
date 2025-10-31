@@ -1,6 +1,7 @@
 ﻿using LoginApp.DataAccess.Data;
 using LoginApp.DataAccess.Entities;
 using LoginApp.DataAccess.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace LoginApp.DataAccess.Repositories
@@ -14,19 +15,19 @@ namespace LoginApp.DataAccess.Repositories
             _Context = context;
         }
 
-        public void AddUser(User user)
+        public async Task AddUserAsync(User user)
         {
-             _Context.Users.Add(user);
+            await _Context.Users.AddAsync(user);
         }
 
-        public User? FindUserByUserName(string UserName)
+        public async Task<User?> FindUserByUserNameAsync(string UserName)
         {
-            return _Context.Users.FirstOrDefault(u => u.Username == UserName);
+            return await _Context.Users.FirstOrDefaultAsync(u => u.Username == UserName);
         }
 
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
-             _Context.SaveChanges();
+            await _Context.SaveChangesAsync();
         }
     }
 }
