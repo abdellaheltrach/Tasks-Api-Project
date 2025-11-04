@@ -40,7 +40,8 @@ namespace LoginApp.DataAccess.Repositories
 
         public Task SoftDeleteAsync(TaskItem task)
         {
-            task.IsDeleted = true;
+            task.Delete();
+
             _context.Tasks.Update(task);
             return Task.CompletedTask;
         }

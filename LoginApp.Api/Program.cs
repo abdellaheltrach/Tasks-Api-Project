@@ -3,6 +3,7 @@ using LoginApp.Api.Models;
 using LoginApp.Business.Services;
 using LoginApp.Business.Services.Interfaces;
 using LoginApp.DataAccess.Data;
+using LoginApp.DataAccess.Data.Interceptors;
 using LoginApp.DataAccess.Entities;
 using LoginApp.DataAccess.Repositories;
 using LoginApp.DataAccess.Repositories.Interfaces;
@@ -39,8 +40,11 @@ builder.Services.AddScoped<ITaskService, TaskService>();
 
 
 
-// ✅ Add Background Service for cleanup (optional but recommended for performance)
+// Add Background Service for cleanup (optional but recommended for performance)
 builder.Services.AddHostedService<RefreshTokenCleanupService>();
+
+// Add SoftDelete interceptor
+builder.Services.AddScoped<SoftDeleteInterceptor>();
 
 
 // Enable controllers

@@ -1,0 +1,2 @@
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\js\auth.js
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\js\main.js

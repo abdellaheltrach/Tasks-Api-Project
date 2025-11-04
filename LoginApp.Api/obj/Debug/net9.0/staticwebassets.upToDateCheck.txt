@@ -1,10 +1,13 @@
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\css\style.css
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\tasks.html
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\js\script.js
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\js\tasks.js
-C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\index.html
-wwwroot\css\style.css
-wwwroot\index.html
-wwwroot\js\script.js
-wwwroot\js\tasks.js
-wwwroot\tasks.html
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\auth.js
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\auth.html
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\css\output.css
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\main.js
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\task.html
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Api\wwwroot\css\main.d.ts.map
+wwwroot\auth.html
+wwwroot\auth.js
+wwwroot\css\main.d.ts.map
+wwwroot\css\output.css
+wwwroot\js\main.d.ts
+wwwroot\main.js
+wwwroot\task.html

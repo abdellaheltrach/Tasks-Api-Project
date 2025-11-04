@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "LoginApp.Business.DTOs.login.LoginDTO",
+        "Type": "LoginApp.Business.DTOs.login.LogoutDTO",
         "IsRequired": true
       }
     ],

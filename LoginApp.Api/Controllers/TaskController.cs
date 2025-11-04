@@ -90,11 +90,6 @@ namespace LoginApp.Api.Controllers
             var existing = await _taskService.GetTaskByIdAsync(id);
             if (existing == null) return NotFound();
 
-            var username = User.Identity?.Name ?? "";
-            var isAdmin = User.IsInRole("Admin");
-            if (!isAdmin && !string.Equals(existing.Username, username, StringComparison.OrdinalIgnoreCase))
-                return Forbid();
-
             await _taskService.SoftDeleteTaskAsync(id);
             return Ok();
         }

@@ -95,19 +95,25 @@ namespace LoginApp.Api.Controllers
         }
 
         [HttpPost("logout")]
-        public async Task<IActionResult> Logout([FromBody] LoginDTO dto)
+        public async Task<IActionResult> Logout([FromBody] LogoutDTO dto)
         {
+            // Try to get user ID from claims
             if (!int.TryParse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
             {
+                // Delete refresh token cookie even if user is not authenticated
                 Response.Cookies.Delete(RefreshCookieName);
                 return Ok();
             }
 
-            if (!string.IsNullOrWhiteSpace(dto.deviceId))
-                await _authService.CancelDeviceToken(userId, dto.deviceId);
+            // Cancel token for the specific device if deviceId is provided
+            if (!string.IsNullOrWhiteSpace(dto.DeviceId))
+            {
+                await _authService.CancelDeviceToken(userId, dto.DeviceId);
+            }
 
-
+            // Delete refresh token cookie
             Response.Cookies.Delete(RefreshCookieName);
+
             return Ok();
         }
     }
