@@ -6,10 +6,10 @@ namespace LoginApp.Business.Services.Interfaces
     public interface ITaskService
     {
         Task<IEnumerable<TaskReadDTO>> GetAllTasksOfUserAsync(int userId);
-        Task<TaskReadDTO?> GetTaskByIdAsync(int id);
+        Task<TaskReadDTO?> GetTaskByIdAsync(int id, int userId);
         Task AddTaskAsync(int UserId, TaskCreateDTO dto);
-        Task UpdateTaskAsync(TaskUpdateDTO dto);
-        Task SoftDeleteTaskAsync(int id);
+        Task UpdateTaskAsync(int userId, TaskUpdateDTO dto);
+        Task SoftDeleteTaskAsync(int id, int userId);
     }
 
 }

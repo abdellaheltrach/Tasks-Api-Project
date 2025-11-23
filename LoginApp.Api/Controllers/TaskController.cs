@@ -58,9 +58,10 @@ namespace LoginApp.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaskById(int id)
         {
-            var task = await _taskService.GetTaskByIdAsync(id);
+            var userId = GetUserIdFromClaims();
+            var task = await _taskService.GetTaskByIdAsync(id, userId);
             if (task == null) return NotFound();
-            // optionally enforce visibility (if deleted and not owner/admin)
+            
             return Ok(task);
         }
 
@@ -70,16 +71,8 @@ namespace LoginApp.Api.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateTask([FromBody] TaskUpdateDTO request)
         {
-            // load current task to check owner
-            var existing = await _taskService.GetTaskByIdAsync(request.Id);
-            if (existing == null) return NotFound();
-
-            var username = User.Identity?.Name ?? "";
-            var isAdmin = User.IsInRole("Admin");
-            if (!isAdmin && !string.Equals(existing.Username, username, StringComparison.OrdinalIgnoreCase))
-                return Forbid();
-
-            await _taskService.UpdateTaskAsync(request);
+            var userId = GetUserIdFromClaims();
+            await _taskService.UpdateTaskAsync(userId, request);
             return Ok();
         }
 
@@ -87,10 +80,8 @@ namespace LoginApp.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)
         {
-            var existing = await _taskService.GetTaskByIdAsync(id);
-            if (existing == null) return NotFound();
-
-            await _taskService.SoftDeleteTaskAsync(id);
+            var userId = GetUserIdFromClaims();
+            await _taskService.SoftDeleteTaskAsync(id, userId);
             return Ok();
         }
 

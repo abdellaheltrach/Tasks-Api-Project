@@ -35,8 +35,7 @@ builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 builder.Services.AddScoped<ITaskItemRepository, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 
-builder.Services.AddScoped<ITaskItemRepository, TaskRepository>();
-builder.Services.AddScoped<ITaskService, TaskService>();
+
 
 
 
