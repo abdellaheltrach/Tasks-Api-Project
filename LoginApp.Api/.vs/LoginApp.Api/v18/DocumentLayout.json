@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.api\\loginapp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:loginapp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.api\\controllers\\userauthenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:controllers\\userauthenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2EDB531-C7BA-D634-2F00-DBED9E3660DC}|..\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapp.dataaccess\\data\\interceptors\\softdeleteinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T14:30:43.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginApp.Api",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\LoginApp.Api.csproj",
+              "RelativeDocumentMoniker": "LoginApp.Api.csproj",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\LoginApp.Api.csproj",
+              "RelativeToolTip": "LoginApp.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-04T14:01:55.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaskController.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "Controllers\\TaskController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAEwDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:22:46.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:13:24.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserAuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\UserAuthenticationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserAuthenticationController.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\UserAuthenticationController.cs",
+              "RelativeToolTip": "Controllers\\UserAuthenticationController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAEwGQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:08:27.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SoftDeleteInterceptor.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Interceptors\\SoftDeleteInterceptor.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.DataAccess\\Data\\Interceptors\\SoftDeleteInterceptor.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Interceptors\\SoftDeleteInterceptor.cs",
+              "RelativeToolTip": "..\\LoginApp.DataAccess\\Data\\Interceptors\\SoftDeleteInterceptor.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAEwDIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T10:55:29.596Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
