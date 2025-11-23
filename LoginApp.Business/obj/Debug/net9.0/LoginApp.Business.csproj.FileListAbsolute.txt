@@ -58,3 +58,4 @@ C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Busine
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Business\obj\Debug\net9.0\refint\LoginApp.Business.dll
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Business\obj\Debug\net9.0\LoginApp.Business.pdb
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Business\obj\Debug\net9.0\ref\LoginApp.Business.dll
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.Business\obj\Debug\net9.0\LoginApp.Business.sourcelink.json

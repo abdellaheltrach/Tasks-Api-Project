@@ -76,6 +76,19 @@ namespace LoginApp.Api.Controllers
             return Ok();
         }
 
+        // PATCH: api/task/{id}/status
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] TaskStatusUpdateDTO request)
+        {
+            if (id != request.TaskId) return BadRequest("Task ID mismatch");
+
+            var userId = GetUserIdFromClaims();
+            var success = await _taskService.UpdateTaskStatusAsync(userId, request);
+            if (!success) return NotFound();
+            
+            return Ok();
+        }
+
         // DELETE: api/task/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)

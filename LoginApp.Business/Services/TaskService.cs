@@ -82,6 +82,18 @@ public class TaskService : ITaskService
         await _taskRepo.SaveAsync();
     }
 
+    public async Task<bool> UpdateTaskStatusAsync(int userId, TaskStatusUpdateDTO dto)
+    {
+        var task = await _taskRepo.GetTaskByIdAsync(dto.TaskId);
+        if (task == null || task.UserId != userId) return false;
+
+        task.TaskStatusId = dto.StatusId;
+
+        await _taskRepo.UpdateAsync(task);
+        await _taskRepo.SaveAsync();
+        return true;
+    }
+
     public async Task SoftDeleteTaskAsync(int id, int userId)
     {
         var task = await _taskRepo.GetTaskByIdAsync(id);

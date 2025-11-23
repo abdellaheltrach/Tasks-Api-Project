@@ -9,6 +9,7 @@ namespace LoginApp.Business.Services.Interfaces
         Task<TaskReadDTO?> GetTaskByIdAsync(int id, int userId);
         Task AddTaskAsync(int UserId, TaskCreateDTO dto);
         Task UpdateTaskAsync(int userId, TaskUpdateDTO dto);
+        Task<bool> UpdateTaskStatusAsync(int userId, TaskStatusUpdateDTO dto);
         Task SoftDeleteTaskAsync(int id, int userId);
     }
 

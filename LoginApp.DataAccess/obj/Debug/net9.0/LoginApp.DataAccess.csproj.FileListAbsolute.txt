@@ -46,3 +46,4 @@ C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.DataAc
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.DataAccess\obj\Debug\net9.0\refint\LoginApp.DataAccess.dll
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.DataAccess\obj\Debug\net9.0\LoginApp.DataAccess.pdb
 C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.DataAccess\obj\Debug\net9.0\ref\LoginApp.DataAccess.dll
+C:\Users\ABDELLAH\Desktop\C#\Project\Login Project\Tasks-Project\LoginApp.DataAccess\obj\Debug\net9.0\LoginApp.DataAccess.sourcelink.json

@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:7252/api/auth"; // backend auth endpoint
+const API_URL = "/api/auth"; // relative path works for both http/https
 
 // Elements
 const flipCardInner = document.getElementById("flipCardInner");
