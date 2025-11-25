@@ -60,8 +60,6 @@ LoginApp.DataAccess/   # Data Access Layer (Entities, Repositories, EF Core)
 - SQL Server (or SQL Server Express)
 - Visual Studio 2022 / VS Code (optional)
 
-
-
 ## 📚 API Endpoints
 
 ### Authentication (`/api/auth`)
@@ -193,7 +191,6 @@ Authorization: Bearer <access_token>
 - ✅ Constants for magic strings (`UserRoles`)
 - ✅ Soft delete pattern for data preservation
 - ✅ Background service for token cleanup
-
 
 ## 📄 License
 

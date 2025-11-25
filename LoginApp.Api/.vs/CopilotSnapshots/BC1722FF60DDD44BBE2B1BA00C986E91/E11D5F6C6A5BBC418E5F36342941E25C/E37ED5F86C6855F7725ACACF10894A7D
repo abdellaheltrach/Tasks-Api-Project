@@ -1,0 +1,37 @@
+﻿using LoginAppTest;
+using LoginApp.Business.Services;
+using LoginApp.Business.Services.Interfaces;
+using Moq;
+using Xunit;
+using System.Threading.Tasks;
+
+public class TaskServiceTests
+{
+    [Fact]
+    public async Task GetAllTasksOfUserAsync_ReturnsTasks()
+    {
+        // Arrange
+        var mockRepo = new Mock<ITaskItemRepository>();
+        mockRepo.Setup(r => r.GetAllTasksOfUserAsync(It.IsAny<int>()))
+                .ReturnsAsync(new List<LoginApp.DataAccess.Entities.TaskItem>());
+        var service = new LoginApp.Business.Services.TaskService(mockRepo.Object);
+
+        // Act
+        var result = await service.GetAllTasksOfUserAsync(1);
+
+        // Assert
+        Assert.NotNull(result);
+    }
+}
+
+namespace LoginAppTest
+{
+    public class UnitTest1
+    {
+        [Fact]
+        public void Test1()
+        {
+
+        }
+    }
+}
