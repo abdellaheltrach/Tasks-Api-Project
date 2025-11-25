@@ -91,7 +91,6 @@ document
 
       const data = await res.json();
       localStorage.setItem("token", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken || "");
       localStorage.setItem("username", username);
 
       // redirect to index page

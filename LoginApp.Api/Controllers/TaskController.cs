@@ -72,7 +72,9 @@ namespace LoginApp.Api.Controllers
         public async Task<IActionResult> UpdateTask([FromBody] TaskUpdateDTO request)
         {
             var userId = GetUserIdFromClaims();
-            await _taskService.UpdateTaskAsync(userId, request);
+            var success = await _taskService.UpdateTaskAsync(userId, request);
+            if (!success) return NotFound();
+            
             return Ok();
         }
 
@@ -94,7 +96,9 @@ namespace LoginApp.Api.Controllers
         public async Task<IActionResult> DeleteTask(int id)
         {
             var userId = GetUserIdFromClaims();
-            await _taskService.SoftDeleteTaskAsync(id, userId);
+            var success = await _taskService.SoftDeleteTaskAsync(id, userId);
+            if (!success) return NotFound();
+
             return Ok();
         }
 

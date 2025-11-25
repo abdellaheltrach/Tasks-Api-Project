@@ -13,5 +13,6 @@ namespace LoginApp.Business.Services.Interfaces
         Task<(bool Success, string? AccessToken, string? RefreshToken, string? Role)> Login(LoginDTO request);
         Task<(string AccessToken, string RefreshToken)> Refresh(string refreshTokenValue);
         Task CancelDeviceToken(int userId, string deviceId);
+        
     }
 }

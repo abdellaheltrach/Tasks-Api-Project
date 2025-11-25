@@ -68,10 +68,10 @@ public class TaskService : ITaskService
         await _taskRepo.SaveAsync();
     }
 
-    public async Task UpdateTaskAsync(int userId, TaskUpdateDTO dto)
+    public async Task<bool> UpdateTaskAsync(int userId, TaskUpdateDTO dto)
     {
         var task = await _taskRepo.GetTaskByIdAsync(dto.Id);
-        if (task == null || task.UserId != userId) return;
+        if (task == null || task.UserId != userId) return false;
 
         task.Title = dto.Title;
         task.Description = dto.Description;
@@ -80,6 +80,7 @@ public class TaskService : ITaskService
 
         await _taskRepo.UpdateAsync(task);
         await _taskRepo.SaveAsync();
+        return true;
     }
 
     public async Task<bool> UpdateTaskStatusAsync(int userId, TaskStatusUpdateDTO dto)
@@ -94,12 +95,13 @@ public class TaskService : ITaskService
         return true;
     }
 
-    public async Task SoftDeleteTaskAsync(int id, int userId)
+    public async Task<bool> SoftDeleteTaskAsync(int id, int userId)
     {
         var task = await _taskRepo.GetTaskByIdAsync(id);
-        if (task == null || task.UserId != userId) return;
+        if (task == null || task.UserId != userId) return false;
 
         await _taskRepo.SoftDeleteAsync(task);
         await _taskRepo.SaveAsync();
+        return true;
     }
 }

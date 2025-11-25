@@ -1,4 +1,5 @@
-﻿using LoginApp.Business.DTOs.login;
+﻿using LoginApp.Business.Constants;
+using LoginApp.Business.DTOs.login;
 using LoginApp.Business.Helpers;
 using LoginApp.Business.Services.Interfaces;
 using LoginApp.DataAccess.Entities;
@@ -29,7 +30,7 @@ public class UserAuthService : IUserAuthService
 
         var NewUser = new User
         {
-            Role = "Guest",
+            Role = UserRoles.Guest,
             Username = requestDto.Username,
             PasswordHash = clsPasswordHasher.Hash(requestDto.Password)
         };
@@ -57,7 +58,7 @@ public class UserAuthService : IUserAuthService
 
 
         // Generate tokens
-        var accessToken = _Token.GenerateAccessToken(user.Id, user.Username, user.Role ?? "Guest");
+        var accessToken = _Token.GenerateAccessToken(user.Id, user.Username, user.Role ?? UserRoles.Guest);
         var refreshToken = _Token.GenerateRefreshToken(deviceId, deviceName);
 
         refreshToken.UserId = user.Id;
@@ -111,7 +112,7 @@ public class UserAuthService : IUserAuthService
         await _refreshTokenRepo.SaveChangesAsync();
 
         //  Generate new access token
-        var newAccess = _Token.GenerateAccessToken(storedToken.User.Id, storedToken.User.Username, storedToken.User.Role ?? "Guest");
+        var newAccess = _Token.GenerateAccessToken(storedToken.User.Id, storedToken.User.Username, storedToken.User.Role ?? UserRoles.Guest);
 
         return (newAccess, storedToken.Token);
     }
