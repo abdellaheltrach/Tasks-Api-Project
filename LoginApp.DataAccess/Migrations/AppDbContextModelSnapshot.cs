@@ -82,6 +82,9 @@ namespace LoginApp.DataAccess.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
                     b.Property<int>("TaskStatusId")
                         .HasColumnType("int");
 
@@ -123,7 +126,7 @@ namespace LoginApp.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Pending"
+                            Name = "To Do"
                         },
                         new
                         {
@@ -148,6 +151,11 @@ namespace LoginApp.DataAccess.Migrations
                     b.Property<DateTime>("CreatingDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -169,6 +177,7 @@ namespace LoginApp.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatingDate = new DateTime(2025, 10, 22, 23, 55, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@example.com",
                             PasswordHash = "$2a$11$0jjaKSFycpBuRCPCjpFifeb37evdVrYq98U0aT8T3d7pavQUh5xx6",
                             Role = "Admin",
                             Username = "admin"
@@ -177,6 +186,7 @@ namespace LoginApp.DataAccess.Migrations
                         {
                             Id = 2,
                             CreatingDate = new DateTime(2025, 10, 22, 23, 55, 0, 0, DateTimeKind.Unspecified),
+                            Email = "guest@example.com",
                             PasswordHash = "$2a$11$bn3QqVz07vRjHP.qleORVec0EP0TgDbW583IXIy1axeFiIy/rtkuC",
                             Role = "Guest",
                             Username = "guest"

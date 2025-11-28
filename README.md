@@ -54,11 +54,95 @@ LoginApp.DataAccess/   # Data Access Layer (Entities, Repositories, EF Core)
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Option 1: Run with Docker (Recommended)
+
+#### Prerequisites
+
+- Docker Desktop (Windows/Mac) or Docker Engine (Linux)
+- Docker Compose
+
+#### Quick Start
+
+1. **Clone the repository** (if not already done):
+
+   ```bash
+   git clone <repository-url>
+   cd Tasks-Project
+   ```
+
+2. **Build and start containers**:
+
+   ```bash
+   docker-compose up --build -d
+   ```
+
+3. **Check container status**:
+
+   ```bash
+   docker-compose ps
+   ```
+
+   Wait until `sqlserver` shows as `healthy` and `api` is `Up`.
+
+4. **Run database migrations** (first time only):
+
+   ```bash
+   docker-compose exec api dotnet ef database update
+   ```
+
+5. **Access the API**:
+   - API: http://localhost:5000
+   - Swagger: http://localhost:5000/swagger (if configured)
+
+#### Docker Commands
+
+**View API logs**:
+
+```bash
+docker-compose logs -f api
+```
+
+**View SQL Server logs**:
+
+```bash
+docker-compose logs -f sqlserver
+```
+
+**Stop containers**:
+
+```bash
+docker-compose down
+```
+
+**Reset database** (removes all data):
+
+```bash
+docker-compose down -v
+docker-compose up --build -d
+```
+
+**Connect to SQL Server**:
+
+- Server: `localhost,1433`
+- Username: `sa`
+- Password: `YourStrong@Password123`
+- Database: `LoginDB`
+
+---
+
+### Option 2: Run Locally (Without Docker)
+
+#### Prerequisites
 
 - .NET SDK 10.0 or higher
 - SQL Server (or SQL Server Express)
 - Visual Studio 2022 / VS Code (optional)
+
+#### Steps
+
+1. Update `appsettings.json` with your local SQL Server connection string
+2. Run migrations: `dotnet ef database update`
+3. Run the API: `dotnet run --project LoginApp.Api`
 
 ## 📚 API Endpoints
 
@@ -191,6 +275,61 @@ Authorization: Bearer <access_token>
 - ✅ Constants for magic strings (`UserRoles`)
 - ✅ Soft delete pattern for data preservation
 - ✅ Background service for token cleanup
+
+## 🔧 Configuration Files
+
+| File                      | Purpose                          | Environment       |
+| ------------------------- | -------------------------------- | ----------------- |
+| `appsettings.json`        | Base configuration               | Local development |
+| `appsettings.Docker.json` | Docker-specific settings         | Docker containers |
+| `Dockerfile`              | API container image definition   | Docker            |
+| `docker-compose.yml`      | Multi-container orchestration    | Docker            |
+| `.dockerignore`           | Excludes files from Docker build | Docker            |
+
+## 🐛 Troubleshooting
+
+### Docker Issues
+
+**Issue**: SQL Server container fails health check
+
+- **Solution**: Increase Docker Desktop memory allocation to at least 4GB
+- Go to Docker Desktop → Settings → Resources → Memory
+
+**Issue**: API can't connect to database
+
+- **Solution**: Ensure SQL Server container is healthy first: `docker-compose ps`
+- Check logs: `docker-compose logs sqlserver`
+
+**Issue**: Port 1433 or 5000 already in use
+
+- **Solution**: Change port mapping in `docker-compose.yml`:
+  ```yaml
+  ports:
+    - "5001:8080" # For API
+    - "1434:1433" # For SQL Server
+  ```
+
+**Issue**: Build fails with NuGet restore errors
+
+- **Solution**: Clear Docker build cache and rebuild:
+  ```bash
+  docker-compose build --no-cache
+  ```
+
+**Issue**: Database migrations fail
+
+- **Solution**: Ensure EF Tools are installed in the container. Run manually:
+  ```bash
+  docker-compose exec api dotnet tool install --global dotnet-ef
+  docker-compose exec api dotnet ef database update
+  ```
+
+**Issue**: Changes not reflected in container
+
+- **Solution**: Rebuild the image:
+  ```bash
+  docker-compose up --build
+  ```
 
 ## 📄 License
 

@@ -1,0 +1,38 @@
+﻿using LoginApp.DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TaskStatus = LoginApp.DataAccess.Entities.TaskStatus;
+
+namespace LoginApp.DataAccess.Data.Config
+{
+    public class TaskStatusConfigurations : IEntityTypeConfiguration<TaskStatus>
+    {
+        public void Configure(EntityTypeBuilder<TaskStatus> builder)
+        {
+            builder.ToTable("TaskStatus");
+
+            builder.HasKey(ts => ts.Id);
+
+            builder.Property(ts => ts.Name).HasMaxLength(50).IsRequired();
+
+            builder.HasMany(ts => ts.Tasks)
+                .WithOne(ts => ts.Status)
+                .HasForeignKey(t => t.TaskStatusId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Seed statuses
+            builder.HasData(
+                new TaskStatus { Id = 1, Name = "Pending" },
+                new TaskStatus { Id = 2, Name = "In Progress" },
+                new TaskStatus { Id = 3, Name = "Completed" }
+                );
+
+
+
+
+
+        }
+    }
+
+
+}

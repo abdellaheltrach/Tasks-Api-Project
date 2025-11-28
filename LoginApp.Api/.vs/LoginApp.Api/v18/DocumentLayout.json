@@ -1,12 +1,27 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\",
+  "WorkspaceRootPath": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05C3BBF0-19A1-445D-9D30-BE1FAF38E00F}|..\\LoginAppTest\\LoginAppTest.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapptest\\unit\\services\\taskservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\task\\taskupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05C3BBF0-19A1-445D-9D30-BE1FAF38E00F}|..\\LoginAppTest\\LoginAppTest.csproj|c:\\users\\abdellah\\desktop\\c#\\project\\login project\\tasks-project\\loginapptest\\helpers\\testdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\task\\taskstatusupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\task\\taskreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\task\\taskcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\logoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,34 +31,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TestDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginAppTest\\Helpers\\TestDbContextFactory.cs",
-              "RelativeDocumentMoniker": "..\\LoginAppTest\\Helpers\\TestDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginAppTest\\Helpers\\TestDbContextFactory.cs",
-              "RelativeToolTip": "..\\LoginAppTest\\Helpers\\TestDbContextFactory.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwBkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T16:24:59.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaskServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginAppTest\\Unit\\Services\\TaskServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\LoginAppTest\\Unit\\Services\\TaskServiceTests.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginAppTest\\Unit\\Services\\TaskServiceTests.cs",
-              "RelativeToolTip": "..\\LoginAppTest\\Unit\\Services\\TaskServiceTests.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAYwGMAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T16:22:50.75Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -51,6 +40,97 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskUpdateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskUpdateDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\Task\\TaskUpdateDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskUpdateDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\Task\\TaskUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:11:43.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskStatusUpdateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskStatusUpdateDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\Task\\TaskStatusUpdateDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskStatusUpdateDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\Task\\TaskStatusUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:11:33.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskReadDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskReadDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\Task\\TaskReadDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskReadDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\Task\\TaskReadDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:11:22.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskCreateDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\Task\\TaskCreateDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\Task\\TaskCreateDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\Task\\TaskCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:09:15.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\RegisterDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\RegisterDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\RegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:08:53.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogoutDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LogoutDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\LogoutDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LogoutDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\LogoutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:08:38.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:07:42.701Z",
+              "EditorCaption": ""
             }
           ]
         }

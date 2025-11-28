@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KU3jhQJZReM=",
+  "dgSpecHash": "cjBvFTQuRFM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\LoginApp.Api.csproj",
+  "projectFilePath": "c:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\LoginApp.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ABDELLAH\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ABDELLAH\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

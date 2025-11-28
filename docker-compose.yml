@@ -1,0 +1,45 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: tasks-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=MyStrong@Password123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "MyStrong@Password123" -Q "SELECT 1" -C || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 15
+      start_period: 30s
+    networks:
+      - tasks-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tasks-api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=LoginDB;User Id=sa;Password=MyStrong@Password123;TrustServerCertificate=True;MultipleActiveResultSets=true;
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - tasks-network
+
+volumes:
+  sqlserver-data:
+    driver: local
+
+networks:
+  tasks-network:
+    driver: bridge

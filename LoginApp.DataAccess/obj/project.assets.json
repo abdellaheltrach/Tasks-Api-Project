@@ -3091,11 +3091,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj",
       "projectName": "LoginApp.DataAccess",
-      "projectPath": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj",
+      "projectPath": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj",
       "packagesPath": "C:\\Users\\ABDELLAH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ABDELLAH\\Desktop\\C#\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

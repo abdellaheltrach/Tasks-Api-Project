@@ -25,4 +25,10 @@
     <ProjectReference Include="..\LoginApp.DataAccess\LoginApp.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.Docker.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

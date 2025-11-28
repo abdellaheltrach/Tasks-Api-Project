@@ -1,0 +1,30 @@
+# Build artifacts
+**/bin/
+**/obj/
+
+# IDE folders
+.vs/
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+.github/
+
+# Test projects
+LoginAppTest/
+
+# Documentation
+**/*.md
+README.md
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
