@@ -52,10 +52,12 @@ builder.Services.AddControllers();
 // Enable CORS for frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
-        b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    options.AddPolicy("AllowFrontend",
+        b => b.WithOrigins("http://localhost:3000", "https://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials());
 });
-
 
 // ✅ Add JWT settings from configuration (for injection in TokenService, etc.)
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
@@ -116,7 +118,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 
 

@@ -1,6 +1,7 @@
 ﻿using LoginApp.Business.DTOs.login;
 using LoginApp.Business.Services;
 using LoginApp.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -11,16 +12,36 @@ namespace LoginApp.Api.Controllers
 
     [ApiController]
     [Route("api/auth")]
-    public class UserAuthenticationController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly IUserAuthService _authService;
         private readonly IConfiguration _config;
         private const string RefreshCookieName = "refreshToken";
 
-        public UserAuthenticationController(IUserAuthService AuthenticationService, IConfiguration Config)
+        public AuthController(IUserAuthService AuthenticationService, IConfiguration Config)
         {
             _authService = AuthenticationService;
             _config = Config;
+        }
+
+        // GET: api/auth/me
+        [HttpGet("me")]
+        [Authorize] // only accessible if JWT is valid
+        public IActionResult Me()
+        {
+            // Extract info from JWT claims
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var username = User.Identity?.Name;
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if (userId == null) return Unauthorized();
+
+            return Ok(new
+            {
+                id = userId,
+                username,
+                role
+            });
         }
 
         [HttpPost("register")]
@@ -53,7 +74,7 @@ namespace LoginApp.Api.Controllers
             {
                 HttpOnly = true,                 // JS on client cannot read this cookie.
                 Secure = true,                   // Only send cookie over HTTPS.
-                SameSite = SameSiteMode.Strict,  // Only send cookie for same-site requests.
+                SameSite = SameSiteMode.None,  // SameSiteMode.Strict: Only send cookie for same-site requests.
                 Expires = DateTime.UtcNow.AddDays(expireDays)// Cookie automatically expires after jwt["RefreshTokenExpireDays"]
             });
 
@@ -81,7 +102,7 @@ namespace LoginApp.Api.Controllers
                 {
                     HttpOnly = true,
                     Secure = true,
-                    SameSite = SameSiteMode.Strict,
+                    SameSite = SameSiteMode.None,
                     Expires = DateTime.UtcNow.AddDays(expireDays)
                 });
 
@@ -97,11 +118,19 @@ namespace LoginApp.Api.Controllers
         [HttpPost("logout")]
         public async Task<IActionResult> Logout([FromBody] LogoutDTO dto)
         {
+            // Define the options exactly as they were used during creation
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            };
+
             // Try to get user ID from claims
             if (!int.TryParse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
             {
-                // Delete refresh token cookie even if user is not authenticated
-                Response.Cookies.Delete(RefreshCookieName);
+                // Delete refresh token cookie with matching options
+                Response.Cookies.Delete(RefreshCookieName, cookieOptions);
                 return Ok();
             }
 
@@ -111,8 +140,8 @@ namespace LoginApp.Api.Controllers
                 await _authService.CancelDeviceToken(userId, dto.DeviceId);
             }
 
-            // Delete refresh token cookie
-            Response.Cookies.Delete(RefreshCookieName);
+            // Delete refresh token cookie with matching options
+            Response.Cookies.Delete(RefreshCookieName, cookieOptions);
 
             return Ok();
         }

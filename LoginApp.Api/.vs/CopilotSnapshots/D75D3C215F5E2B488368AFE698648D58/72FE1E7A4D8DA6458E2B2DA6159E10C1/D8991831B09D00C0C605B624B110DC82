@@ -1,0 +1,33 @@
+﻿using LoginApp.DataAccess.Data;
+using LoginApp.DataAccess.Entities;
+using LoginApp.DataAccess.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+
+namespace LoginApp.DataAccess.Repositories
+{
+    public class UserRepository : IUserRepository
+    {
+        private readonly AppDbContext _Context;
+
+        public UserRepository(AppDbContext context)
+        {
+            _Context = context;
+        }
+
+        public async Task AddUserAsync(User user)
+        {
+            await _Context.Users.AddAsync(user);
+        }
+
+        public async Task<User?> FindUserByUserNameAsync(string UserName)
+        {
+            return await _Context.Users.FirstOrDefaultAsync(u => u.Username == UserName);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _Context.SaveChangesAsync();
+        }
+    }
+}

@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "ContainingType": "LoginApp.Api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "ContainingType": "LoginApp.Api.Controllers.AuthController",
     "Method": "Logout",
     "RelativePath": "api/auth/logout",
     "HttpMethod": "POST",
@@ -32,7 +32,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "ContainingType": "LoginApp.Api.Controllers.AuthController",
+    "Method": "Me",
+    "RelativePath": "api/auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LoginApp.Api.Controllers.AuthController",
     "Method": "Refresh",
     "RelativePath": "api/auth/refresh",
     "HttpMethod": "POST",
@@ -42,7 +52,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LoginApp.Api.Controllers.UserAuthenticationController",
+    "ContainingType": "LoginApp.Api.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",

@@ -71,33 +71,33 @@ document
     e.preventDefault();
     clearErrors("loginFormElement");
 
-    const username = document.getElementById("loginUsername").value.trim();
+    const identifier = document.getElementById("loginIdentifier").value.trim();
     const password = document.getElementById("loginPassword").value.trim();
 
-    if (!username) return showError("loginUsername", "Username is required");
+    if (!identifier) return showError("loginIdentifier", "Username or Email is required");
     if (!password) return showError("loginPassword", "Password is required");
 
     try {
       const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ identifier, password }),
       });
 
       if (!res.ok) {
         const text = await res.text().catch(() => null);
-        return showError("loginUsername", getFriendlyMessage(res, text));
+        return showError("loginIdentifier", getFriendlyMessage(res, text));
       }
 
       const data = await res.json();
       localStorage.setItem("token", data.accessToken);
-      localStorage.setItem("username", username);
+      localStorage.setItem("identifier", identifier);
 
       // redirect to index page
       window.location.href = "/task.html";
     } catch (err) {
       console.error(err);
-      showError("loginUsername", "Network error. Try again.");
+      showError("loginIdentifier", "Network error. Try again.");
     }
   });
 

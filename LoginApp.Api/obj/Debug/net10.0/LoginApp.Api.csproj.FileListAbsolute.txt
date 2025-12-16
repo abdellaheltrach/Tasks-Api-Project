@@ -322,8 +322,6 @@ C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Ap
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\scopedcss\bundle\LoginApp.Api.styles.css
-C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\wvsn88ispx-{0}-xb3puw7u0a-xb3puw7u0a.gz
-C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\bafwl7xtju-{0}-xyqglcd9sf-xyqglcd9sf.gz
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\w71lgnewzw-{0}-v7ugqrcbqs-v7ugqrcbqs.gz
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\8pdvi994fv-{0}-l94r4605gp-l94r4605gp.gz
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\pvj8ohyf1v-{0}-ucj18n059a-ucj18n059a.gz
@@ -340,3 +338,5 @@ C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Ap
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\LoginApp.Api.pdb
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\LoginApp.Api.genruntimeconfig.cache
 C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\ref\LoginApp.Api.dll
+C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\wvsn88ispx-{0}-5h2ggbcz3v-5h2ggbcz3v.gz
+C:\Users\ABDELLAH\Desktop\Csharp\Project\Login Project\Tasks-Project\LoginApp.Api\obj\Debug\net10.0\compressed\bafwl7xtju-{0}-qbevdsldem-qbevdsldem.gz

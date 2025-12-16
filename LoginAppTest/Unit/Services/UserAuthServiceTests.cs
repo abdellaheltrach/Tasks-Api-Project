@@ -165,7 +165,7 @@ public class UserAuthServiceTests
         // Arrange
         var loginDto = new LoginDTO
         {
-            Username = "validuser",
+            Identifier = "validuser",
             Password = "ValidPassword123",
             deviceId = "device-001",
             deviceName = "My Laptop"
@@ -188,7 +188,7 @@ public class UserAuthServiceTests
             ExpiresDate = DateTime.UtcNow.AddDays(7)
         };
 
-        _mockUserRepo.Setup(r => r.FindUserByUserNameAsync(loginDto.Username))
+        _mockUserRepo.Setup(r => r.FindUserByIdentifierAsync(loginDto.Identifier))
                      .ReturnsAsync(user);
         _mockTokenService.Setup(s => s.GenerateAccessToken(user.Id, user.Username, user.Role!))
                          .Returns("access-token-123");
@@ -220,11 +220,11 @@ public class UserAuthServiceTests
         // Arrange
         var loginDto = new LoginDTO
         {
-            Username = "nonexistent",
+            Identifier = "nonexistent",
             Password = "Password123"
         };
 
-        _mockUserRepo.Setup(r => r.FindUserByUserNameAsync(loginDto.Username))
+        _mockUserRepo.Setup(r => r.FindUserByIdentifierAsync(loginDto.Identifier))
                      .ReturnsAsync((User?)null);
 
         // Act
@@ -246,7 +246,7 @@ public class UserAuthServiceTests
         // Arrange
         var loginDto = new LoginDTO
         {
-            Username = "validuser",
+            Identifier = "validuser",
             Password = "WrongPassword"
         };
 
@@ -257,7 +257,7 @@ public class UserAuthServiceTests
             PasswordHash = clsPasswordHasher.Hash("CorrectPassword")
         };
 
-        _mockUserRepo.Setup(r => r.FindUserByUserNameAsync(loginDto.Username))
+        _mockUserRepo.Setup(r => r.FindUserByIdentifierAsync(loginDto.Identifier))
                      .ReturnsAsync(user);
 
         // Act
@@ -277,7 +277,7 @@ public class UserAuthServiceTests
         // Arrange
         var loginDto = new LoginDTO
         {
-            Username = "validuser",
+            Identifier = "validuser",
             Password = "ValidPassword123",
             deviceId = "", // Empty device ID
             deviceName = ""
@@ -292,7 +292,7 @@ public class UserAuthServiceTests
         };
 
         string capturedDeviceId = "";
-        _mockUserRepo.Setup(r => r.FindUserByUserNameAsync(loginDto.Username))
+        _mockUserRepo.Setup(r => r.FindUserByIdentifierAsync(loginDto.Identifier))
                      .ReturnsAsync(user);
         _mockTokenService.Setup(s => s.GenerateAccessToken(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>()))
                          .Returns("access-token");
@@ -322,7 +322,7 @@ public class UserAuthServiceTests
         // Arrange
         var loginDto = new LoginDTO
         {
-            Username = "validuser",
+            Identifier = "validuser",
             Password = "ValidPassword123",
             deviceId = "device-001",
             deviceName = "My Laptop"
@@ -355,7 +355,7 @@ public class UserAuthServiceTests
             ExpiresDate = DateTime.UtcNow.AddDays(7)
         };
 
-        _mockUserRepo.Setup(r => r.FindUserByUserNameAsync(loginDto.Username))
+        _mockUserRepo.Setup(r => r.FindUserByIdentifierAsync(loginDto.Identifier))
                      .ReturnsAsync(user);
         _mockTokenService.Setup(s => s.GenerateAccessToken(user.Id, user.Username, user.Role))
                          .Returns("access-token-123");
