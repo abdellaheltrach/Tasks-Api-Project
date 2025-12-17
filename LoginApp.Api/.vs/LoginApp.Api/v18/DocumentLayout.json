@@ -7,21 +7,7 @@
       "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2EDB531-C7BA-D634-2F00-DBED9E3660DC}|..\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.dataaccess\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2EDB531-C7BA-D634-2F00-DBED9E3660DC}|..\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.dataaccess\\data\\config\\userconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2EDB531-C7BA-D634-2F00-DBED9E3660DC}|..\\LoginApp.DataAccess\\LoginApp.DataAccess.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.dataaccess\\data\\config\\taskitemconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,8 +17,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T16:50:56.568Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -43,79 +42,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAqwDQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T14:38:42.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Config\\UserConfigurations.cs",
-              "RelativeDocumentMoniker": "..\\LoginApp.DataAccess\\Data\\Config\\UserConfigurations.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Config\\UserConfigurations.cs",
-              "RelativeToolTip": "..\\LoginApp.DataAccess\\Data\\Config\\UserConfigurations.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T14:26:13.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TaskItemConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Config\\TaskItemConfigurations.cs",
-              "RelativeDocumentMoniker": "..\\LoginApp.DataAccess\\Data\\Config\\TaskItemConfigurations.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Data\\Config\\TaskItemConfigurations.cs",
-              "RelativeToolTip": "..\\LoginApp.DataAccess\\Data\\Config\\TaskItemConfigurations.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T14:26:06.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TaskRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Repositories\\TaskRepository.cs",
-              "RelativeDocumentMoniker": "..\\LoginApp.DataAccess\\Repositories\\TaskRepository.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.DataAccess\\Repositories\\TaskRepository.cs",
-              "RelativeToolTip": "..\\LoginApp.DataAccess\\Repositories\\TaskRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:22:07.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAmwHMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T17:25:29.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaskController.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\TaskController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TaskController.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\TaskController.cs",
-              "RelativeToolTip": "Controllers\\TaskController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAlwFsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:25:27.153Z",
               "EditorCaption": ""
             }
           ]

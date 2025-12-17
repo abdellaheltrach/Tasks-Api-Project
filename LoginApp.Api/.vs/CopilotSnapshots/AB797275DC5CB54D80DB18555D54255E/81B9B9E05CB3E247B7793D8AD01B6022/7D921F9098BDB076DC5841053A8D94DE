@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace LoginApp.Api.Controllers
 {
+
     [ApiController]
     [Route("api/auth")]
     public class AuthController : ControllerBase
@@ -16,25 +17,11 @@ namespace LoginApp.Api.Controllers
         private readonly IUserAuthService _authService;
         private readonly IConfiguration _config;
         private const string RefreshCookieName = "refreshToken";
-        private const string JwtSectionName = "Jwt";
-        private const string RefreshTokenExpireDaysKey = "RefreshTokenExpireDays";
 
         public AuthController(IUserAuthService AuthenticationService, IConfiguration Config)
         {
             _authService = AuthenticationService;
             _config = Config;
-        }
-
-        // Helper to create consistent cookie options
-        private CookieOptions GetRefreshCookieOptions(int expireDays)
-        {
-            return new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTime.UtcNow.AddDays(expireDays)
-            };
         }
 
         // GET: api/auth/me
@@ -60,9 +47,6 @@ namespace LoginApp.Api.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             var success = await _authService.Register(request);
 
             if (!success) return BadRequest(new { message = "Username already exists" });
@@ -70,42 +54,61 @@ namespace LoginApp.Api.Controllers
             return Ok(new { message = "User registered successfully" });
         }
 
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             var result = await _authService.Login(dto);
             if (!result.Success) //login refused
                 return Unauthorized();
 
-            var jwt = _config.GetSection(JwtSectionName);
-            var expireDays = Convert.ToInt32(jwt[RefreshTokenExpireDaysKey]);
 
+            var jwt = _config.GetSection("Jwt");
+
+            // Get expiration days from appsettings
+            var expireDays = Convert.ToInt32(jwt["RefreshTokenExpireDays"]);
+
+           
             // Set HttpOnly cookie for refresh token
-            Response.Cookies.Append(RefreshCookieName, result.RefreshToken!, GetRefreshCookieOptions(expireDays));
+            Response.Cookies.Append(RefreshCookieName, result.RefreshToken!, new CookieOptions
+            {
+                HttpOnly = true,                 // JS on client cannot read this cookie.
+                Secure = true,                   // Only send cookie over HTTPS.
+                SameSite = SameSiteMode.None,  // SameSiteMode.Strict: Only send cookie for same-site requests.
+                Expires = DateTime.UtcNow.AddDays(expireDays)// Cookie automatically expires after jwt["RefreshTokenExpireDays"]
+            });
 
             return Ok(new { accessToken = result.AccessToken, role = result.Role });
         }
+
 
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh()
         {
             if (!Request.Cookies.TryGetValue(RefreshCookieName, out var cookieToken))
                 return Unauthorized();
-
+            
             try
             {
                 var (newAccess, newRefresh) = await _authService.Refresh(cookieToken);
-                var jwt = _config.GetSection(JwtSectionName);
-                var expireDays = Convert.ToInt32(jwt[RefreshTokenExpireDaysKey]);
 
-                Response.Cookies.Append(RefreshCookieName, newRefresh, GetRefreshCookieOptions(expireDays));
+
+                // Get expiration days from appsettings
+                var jwt = _config.GetSection("Jwt");
+                var expireDays = Convert.ToInt32(jwt["RefreshTokenExpireDays"]);
+
+
+                Response.Cookies.Append(RefreshCookieName, newRefresh, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTime.UtcNow.AddDays(expireDays)
+                });
 
                 return Ok(new { accessToken = newAccess });
             }
-            catch (Exception ex) when (ex is UnauthorizedAccessException || ex is ArgumentException)
+            catch
             {
                 Response.Cookies.Delete(RefreshCookieName);
                 return Unauthorized();
@@ -115,14 +118,18 @@ namespace LoginApp.Api.Controllers
         [HttpPost("logout")]
         public async Task<IActionResult> Logout([FromBody] LogoutDTO dto)
         {
-            var jwt = _config.GetSection(JwtSectionName);
-            var expireDays = Convert.ToInt32(jwt[RefreshTokenExpireDaysKey]);
-            var cookieOptions = GetRefreshCookieOptions(expireDays);
-            cookieOptions.Expires = null; // Remove expiration for deletion
+            // Define the options exactly as they were used during creation
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            };
 
             // Try to get user ID from claims
             if (!int.TryParse(User?.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
             {
+                // Delete refresh token cookie with matching options
                 Response.Cookies.Delete(RefreshCookieName, cookieOptions);
                 return Ok();
             }
@@ -133,11 +140,14 @@ namespace LoginApp.Api.Controllers
                 await _authService.CancelDeviceToken(userId, dto.DeviceId);
             }
 
+            // Delete refresh token cookie with matching options
             Response.Cookies.Delete(RefreshCookieName, cookieOptions);
 
             return Ok();
         }
     }
+
+
 }
 
 
