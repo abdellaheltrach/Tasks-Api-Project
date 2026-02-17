@@ -1,15 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC9C3AD3-D9A7-449C-B3F1-9D360D1F78CB}|LoginApp.Api.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE9E4214-01A5-F3D7-B9B9-9627D35727C2}|..\\LoginApp.Business\\LoginApp.Business.csproj|c:\\users\\abdellah\\desktop\\csharp\\project\\login project\\tasks-project\\loginapp.business\\dtos\\login\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -17,20 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
-              "RelativeToolTip": "..\\LoginApp.Business\\DTOs\\login\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T16:50:56.568Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
@@ -38,20 +21,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\ABDELLAH\\Desktop\\Csharp\\Project\\Login Project\\Tasks-Project\\LoginApp.Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:25:29.482Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         }

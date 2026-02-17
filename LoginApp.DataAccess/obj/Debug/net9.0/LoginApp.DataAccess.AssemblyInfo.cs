@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginApp.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb3dc6eb34582941317b1ff2ab08622146cfc0a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4268479b650f149185a4787b53fe755171a7281")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginApp.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginApp.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

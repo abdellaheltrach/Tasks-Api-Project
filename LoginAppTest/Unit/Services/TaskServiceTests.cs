@@ -1,20 +1,14 @@
 using FluentAssertions;
-using LoginApp.Business.DTOs;
 using LoginApp.Business.DTOs.Task;
 using LoginApp.Business.Services;
 using LoginApp.DataAccess.Entities;
-using LoginApp.DataAccess.Repositories;
 using LoginApp.DataAccess.Repositories.Interfaces;
-using LoginAppTest.Helpers;
 using Moq;
 using TaskStatusEntity = LoginApp.DataAccess.Entities.TaskStatus;
 
 namespace LoginAppTest.Unit.Services;
 
-/// <summary>
-/// Unit tests for TaskService covering all CRUD operations and authorization logic.
-/// Uses Moq to isolate service layer from data access layer.
-/// </summary>
+
 public class TaskServiceTests
 {
     private readonly Mock<ITaskItemRepository> _mockRepo;
@@ -37,10 +31,10 @@ public class TaskServiceTests
         int userId = 1;
         var tasks = new List<TaskItem>
         {
-            new() 
-            { 
-                Id = 1, 
-                Title = "Task 1", 
+            new()
+            {
+                Id = 1,
+                Title = "Task 1",
                 Description = "Description 1",
                 UserId = userId,
                 TaskStatusId = 1,
@@ -50,10 +44,10 @@ public class TaskServiceTests
                 DueDate = DateTime.UtcNow.AddDays(7),
                 IsDeleted = false
             },
-            new() 
-            { 
-                Id = 2, 
-                Title = "Task 2", 
+            new()
+            {
+                Id = 2,
+                Title = "Task 2",
                 Description = "Description 2",
                 UserId = userId,
                 TaskStatusId = 2,
@@ -109,9 +103,9 @@ public class TaskServiceTests
         int userId = 1;
         var tasks = new List<TaskItem>
         {
-            new() 
-            { 
-                Id = 1, 
+            new()
+            {
+                Id = 1,
                 Title = "Task 1",
                 UserId = userId,
                 Status = null!, // Null status

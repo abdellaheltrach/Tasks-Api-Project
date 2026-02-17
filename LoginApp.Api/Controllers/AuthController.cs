@@ -1,16 +1,15 @@
 ﻿using LoginApp.Business.DTOs.login;
-using LoginApp.Business.Services;
 using LoginApp.Business.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace LoginApp.Api.Controllers
 {
     [ApiController]
     [Route("api/auth")]
+    [EnableRateLimiting("AuthPolicy")]
     public class AuthController : ControllerBase
     {
         private readonly IUserAuthService _authService;
@@ -25,7 +24,6 @@ namespace LoginApp.Api.Controllers
             _config = Config;
         }
 
-        // Helper to create consistent cookie options
         private CookieOptions GetRefreshCookieOptions(int expireDays)
         {
             return new CookieOptions
@@ -37,9 +35,8 @@ namespace LoginApp.Api.Controllers
             };
         }
 
-        // GET: api/auth/me
         [HttpGet("me")]
-        [Authorize] // only accessible if JWT is valid
+        [Authorize]
         public IActionResult Me()
         {
             // Extract info from JWT claims
@@ -86,12 +83,17 @@ namespace LoginApp.Api.Controllers
             // Set HttpOnly cookie for refresh token
             Response.Cookies.Append(RefreshCookieName, result.RefreshToken!, GetRefreshCookieOptions(expireDays));
 
-            return Ok(new { accessToken = result.AccessToken, role = result.Role });
+            return Ok(new { accessToken = result.AccessToken });
         }
 
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh()
         {
+            if (User.Identity?.IsAuthenticated == true)
+            {
+                return BadRequest(new { message = "Token is still valid" });
+            }
+
             if (!Request.Cookies.TryGetValue(RefreshCookieName, out var cookieToken))
                 return Unauthorized();
 
